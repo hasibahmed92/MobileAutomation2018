@@ -3,7 +3,7 @@ package UiCatalogPage;
 import AlertsPage.Alerts;
 import ButtonsPage.Buttons;
 import ControlsPage.Controls;
-import ImgesPage.Images;
+import ImagesPage.Images;
 import PickersPage.Picker;
 import SearchBarPage.SearchBar;
 import SegmentsPage.Segments;
@@ -15,22 +15,15 @@ import WebPage.Web;
 import common.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by mrahman on 1/15/17.
- */
 public class UiCatalog extends Base {
-
     List<WebElement> elements = new ArrayList<WebElement>();
-
     public void page() {
         //store mobile elements into ArrayList
         elements = ad.findElements(By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell"));
     }
-
     public Buttons getButtonPage(){
         page();
         elements.get(0).click();
@@ -91,5 +84,4 @@ public class UiCatalog extends Base {
         elements.get(11).click();
         return new Transitions();
     }
-
 }

@@ -1,31 +1,38 @@
 package PickersPage;
 
 import common.Base;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by mrahman on 1/15/17.
- */
 public class Picker extends Base {
-    public void selectPickerTwoWheels(String name, String number){
-        //scrollKeys(ad, new String[]{name,number});
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Pickers\"]")
+    public static WebElement pickers;
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"UIDatePicker\"]")
+    public static WebElement datePickers;
+    public void showDate(){
+        pickers.click();
+        datePickers.click();
+        String Actual = ad.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"UIDatePickerModeDate\"]")).getText();
+        String Expected = "UIDatePickerModeDate";
+        System.out.println(Actual);
     }
-    @FindBy(xpath = "//UIAApplication[1]/UIAWindow[2]/UIAToolbar[1]/UIASegmentedControl[1]/UIAButton")
-    List<WebElement> segmentControl = new ArrayList<WebElement>();
-
-    public void getUIPicker(){
-        segmentControl.get(0).click();
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"UIPicker\"]")
+    public static WebElement UIPickers;
+    public void showUI() {
+        pickers.click();
+        UIPickers.click();
+        String Actual = ad.findElement(By.xpath("//XCUIElementTypeApplication[@name=\"UICatalog\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]")).getAttribute("value");
+        String Expected = "John Appleseed";
+        System.out.println(Actual);
     }
-    public void getUIDatePicker(){
-        segmentControl.get(1).click();
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Custom\"]")
+    public static WebElement custom;
+    public void showCustom1(){
+        pickers.click();
+        custom.click();
+        String Actual = ad.findElement(By.xpath("//XCUIElementTypeApplication[@name=\"UICatalog\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypePicker/XCUIElementTypePickerWheel")).getAttribute("value");
+        String Expected = "Early Morning, 1 of 4";
+        System.out.println(Actual);
     }
-    public void getCustom(){
-        segmentControl.get(2).click();
-    }
-
-
 }

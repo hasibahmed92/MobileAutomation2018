@@ -2,11 +2,7 @@ package TextFieldsPage;
 
 import common.Base;
 
-/**
- * Created by mrahman on 1/15/17.
- */
 public class TextFields extends Base {
-
     public void typeOnUiTextField(){
         typeByXpath("//XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]", "Architecture");
     }
@@ -19,7 +15,6 @@ public class TextFields extends Base {
     public void typeOnUiTextFieldLeftView(){
         typeByXpath("//XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[7]", "Secure");
     }
-
     public void writeTextToFields()throws InterruptedException{
         typeOnUiTextField();
         typeOnUiTextFieldRounded();

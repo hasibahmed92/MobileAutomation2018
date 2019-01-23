@@ -1,30 +1,47 @@
 package AlertsPage;
 
 import common.Base;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by mrahman on 1/15/17.
- */
 public class Alerts extends Base {
-    public void showActionSheetSimple(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[1]");
+    @FindBy (xpath = "//XCUIElementTypeApplication[@name=\"UICatalog\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[11]")
+    public static WebElement alert;
+  @FindBy (xpath = "(//XCUIElementTypeStaticText[@name=\"Show Simple\"])[1]")
+    public static WebElement simple;
+  public void showSimple(){
+      alert.click();
+      simple.click();
+      String Actual = ad.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"UIActionSheet <title>\"]")).getTagName();
+      String Expected = "XCUIElementTypeStaticText";
+      System.out.println(Actual);
+  }
+    @FindBy (xpath = "(//XCUIElementTypeStaticText[@name=\"Show OK-Cancel\"])[1]")
+    public static WebElement okCancel;
+    public void showOkCancel(){
+        alert.click();
+        okCancel.click();
+        String Actual = ad.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"UIActionSheet <title>\"]")).getTagName();
+        String Expected = "XCUIElementTypeStaticText";
+        System.out.println(Actual);
     }
-    public void showActionSheetOkCancel(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[3]");
+    @FindBy (xpath = "//XCUIElementTypeStaticText[@name=\"Show Customized\"]")
+    public static WebElement customized;
+    public void showCustom(){
+        alert.click();
+        customized.click();
+        String Actual = ad.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"UIActionSheet <title>\"]")).getTagName();
+        String Expected = "XCUIElementTypeStaticText";
+        System.out.println(Actual);
     }
-    public void showActionSheetCustom(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[5]");
-    }
-    public void showAlertSimple(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[7]");
-    }
-    public void showAlertOkCancel(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[9]");
-    }
-    public void showAlertCustom(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[11]");
-    }
-    public void showSecureTextInput(){
-        clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[13]");
+    @FindBy (xpath = "(//XCUIElementTypeStaticText[@name=\"Show Simple\"])[2]")
+    public static WebElement showSimpleAlerts;
+    public void showSimpleAlerts(){
+        alert.click();
+        showSimpleAlerts.click();
+        String Actual = ad.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"<Alert message>\"]")).getTagName();
+        String Expected = "XCUIElementTypeStaticText";
+        System.out.println(Actual);
     }
 }
