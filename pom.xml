@@ -12,6 +12,8 @@
         <module>Generic</module>
         <module>UiCatalog</module>
         <module>NYP</module>
+        <module>Ebay</module>
+        <module>GoogleNews</module>
     </modules>
 
     <dependencyManagement>
@@ -19,7 +21,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>6.9.6</version>
+                <version>7.0.0-beta1</version>
             </dependency>
 
             <dependency>
@@ -32,6 +34,31 @@
                 <artifactId>poi</artifactId>
                 <version>3.13-beta1</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>3.13-beta1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>openxml4j</artifactId>
+                <version>1.0-beta</version>
+            </dependency>
+            <dependency>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+                <version>1.4.01</version>
+            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.wso2.orbit.org.apache.poi</groupId>-->
+                <!--<artifactId>poi-scratchpad</artifactId>-->
+                <!--<version>3.17.0.wso2v1</version>-->
+            <!--</dependency>-->
         </dependencies>
     </dependencyManagement>
 

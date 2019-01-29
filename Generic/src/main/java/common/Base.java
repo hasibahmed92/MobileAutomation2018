@@ -37,8 +37,8 @@ public class Base {
     public DesiredCapabilities cap = null;
     @Parameters({"OS","appType","deviceType", "deviceName","version"})
     @BeforeMethod
-    public void setUp(@Optional ("ios") String OS, @Optional ("iPhone") String appType, @Optional("Simulator") String deviceType, @Optional("iPhone Simulator") String deviceName,
-                      @Optional("10.3") String version)throws IOException,InterruptedException{
+    public void setUp(@Optional ("Android") String OS, @Optional ("Phone") String appType, @Optional("Emulator") String deviceType, @Optional("Nexus 5") String deviceName,
+                      @Optional("9") String version)throws IOException,InterruptedException{
         if(OS.equalsIgnoreCase("ios")){
             if(appType.contains("iPhone")){
                 appDirectory = new File("/Users/hasibahmed/IdeaProjects/MobileNov2018/UiCatalog/src/app/UICatalog6.1.app.zip");
@@ -89,8 +89,8 @@ public class Base {
             }
         }else if(OS.contains("Android")){
             if(appType.contains("Phone")){
-                appDirectory = new File("Android/src/app");
-                findApp = new File(appDirectory,"snapchat.apk");
+                appDirectory = new File("GoogleNews/src/app");
+                findApp = new File(appDirectory,"googleNews.apk");
                 if(deviceType.equalsIgnoreCase("RealDevice")){
                     cap = new DesiredCapabilities();
                     cap.setCapability(MobileCapabilityType.DEVICE_NAME,deviceName);
