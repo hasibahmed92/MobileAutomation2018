@@ -4,6 +4,7 @@ import common.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 public class Buttons extends Base {
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Buttons\"]")

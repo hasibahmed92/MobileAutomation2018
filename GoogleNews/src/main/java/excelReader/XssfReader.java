@@ -1,5 +1,7 @@
 package excelReader;
 
+import Util.ConnectToMongoDB;
+import com.mongodb.client.MongoDatabase;
 import common.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +10,8 @@ import reader.ReadXls;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static Util.ConnectToMongoDB.connectToMongoDB;
 
 public class XssfReader extends Base {
     @FindBy(how = How.XPATH, xpath = "//com.google.android.apps.genie.geniewidget.agf[@content-desc=\"Top Stories\"]/android.widget.TextView")
@@ -20,6 +24,7 @@ public class XssfReader extends Base {
     WebElement BUSINESS;
 
     public List webElementList() {
+        MongoDatabase mongoDatabase = connectToMongoDB();
         List<WebElement> webElements = new ArrayList<WebElement>();
         webElements.add(TOPSTORIES);
         webElements.add(WORLD);

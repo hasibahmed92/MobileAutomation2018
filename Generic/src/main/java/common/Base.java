@@ -37,8 +37,8 @@ public class Base {
     public DesiredCapabilities cap = null;
     @Parameters({"OS","appType","deviceType", "deviceName","version"})
     @BeforeMethod
-    public void setUp(@Optional ("Android") String OS, @Optional ("Phone") String appType, @Optional("Emulator") String deviceType, @Optional("Nexus 5") String deviceName,
-                      @Optional("9") String version)throws IOException,InterruptedException{
+    public void setUp(@Optional ("Android") String OS, @Optional ("Phone") String appType, @Optional("Emulator") String deviceType, @Optional("Pixel XL API 27") String deviceName,
+                      @Optional("8.1") String version)throws IOException,InterruptedException{
         if(OS.equalsIgnoreCase("ios")){
             if(appType.contains("iPhone")){
                 appDirectory = new File("/Users/hasibahmed/IdeaProjects/MobileNov2018/UiCatalog/src/app/UICatalog6.1.app.zip");
@@ -89,8 +89,8 @@ public class Base {
             }
         }else if(OS.contains("Android")){
             if(appType.contains("Phone")){
-                appDirectory = new File("GoogleNews/src/app");
-                findApp = new File(appDirectory,"googleNews.apk");
+                appDirectory = new File("NYP/src/app");
+                findApp = new File(appDirectory,"nyp.apk");
                 if(deviceType.equalsIgnoreCase("RealDevice")){
                     cap = new DesiredCapabilities();
                     cap.setCapability(MobileCapabilityType.DEVICE_NAME,deviceName);
@@ -148,6 +148,12 @@ public class Base {
     public void typeByXpath(String locator, String value){
         ad.findElement(By.xpath(locator)).sendKeys(value);
     }
+    public void typeByXpathEnter(String locator, String value){
+        ad.findElement(By.xpath(locator)).sendKeys(value, Keys.ENTER);
+    }
+    public void typeByIDEnter(String locator, String value){
+        ad.findElement(By.id(locator)).sendKeys(value, Keys.ENTER);
+    }
     public List<String> getTexts(List<WebElement> elements){
         List<String> text = new ArrayList<String>();
         for(WebElement element:elements){
@@ -175,6 +181,20 @@ public class Base {
         }catch (Exception e){
             System.err.println("No alert visible in 5 seconds");
         }
+    }
+    public void inputValueInTextBoxByWebElement(WebElement webElement, String value) {
+        //System.out.println(value +"\n");
+
+        webElement.sendKeys(value);
+    }
+
+    public void clearInputBox(WebElement webElement) {
+        webElement.clear();
+    }
+
+    //constant sleep time
+    public void sleepFor(int sec) throws InterruptedException {
+        Thread.sleep(1000 * sec);
     }
     public void scrollAndClickByName(String locator){
         ad.scrollTo(locator).click();

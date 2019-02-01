@@ -17,11 +17,14 @@
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
             </dependency>
-
-            <dependency>
+           <dependency>
                 <groupId>io.appium</groupId>
                 <artifactId>java-client</artifactId>
             </dependency>
+           <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+           </dependency>
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
@@ -34,10 +37,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.wso2.orbit.org.apache.poi</groupId>-->
-            <!--<artifactId>poi-scratchpad</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>openxml4j</artifactId>
@@ -45,6 +44,22 @@
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-sheets</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
         </dependency>
     </dependencies>
 

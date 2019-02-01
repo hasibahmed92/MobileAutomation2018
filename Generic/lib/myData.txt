@@ -1,0 +1,12 @@
+mysql> select * from newsList;
++----+---------------+
+| ID | LatestStories |
++----+---------------+
+|  1 | News          |
+|  2 | Metro         |
+|  3 | Page Six      |
+|  4 | Sports        |
+|  5 | Business      |
+|  6 | Opinion       |
++----+---------------+
+6 rows in set (0.00 sec)

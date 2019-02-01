@@ -7,16 +7,16 @@ import org.testng.annotations.Test;
 
 public class TestHomePage extends HomePage {
 
-    HomePage hp;
+    HomePage homePage;
 
     @BeforeMethod
     public void setUp(){
-         hp = PageFactory.initElements(ad, HomePage.class);
+         homePage = PageFactory.initElements(ad, HomePage.class);
     }
 
     @Test
-    public void testSellingButton(){
-        hp.setSellingTab();
+    public void test1() throws Exception {
+        homePage.setSearch();
     }
 
 }

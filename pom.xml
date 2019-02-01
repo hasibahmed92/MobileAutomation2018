@@ -23,7 +23,6 @@
                 <artifactId>testng</artifactId>
                 <version>7.0.0-beta1</version>
             </dependency>
-
             <dependency>
                 <groupId>io.appium</groupId>
                 <artifactId>java-client</artifactId>
@@ -54,11 +53,31 @@
                 <artifactId>xml-apis</artifactId>
                 <version>1.4.01</version>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>org.wso2.orbit.org.apache.poi</groupId>-->
-                <!--<artifactId>poi-scratchpad</artifactId>-->
-                <!--<version>3.17.0.wso2v1</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>com.google.api-client</groupId>
+                <artifactId>google-api-client</artifactId>
+                <version>1.23.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.oauth-client</groupId>
+                <artifactId>google-oauth-client-jetty</artifactId>
+                <version>1.23.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.apis</groupId>
+                <artifactId>google-api-services-sheets</artifactId>
+                <version>v4-rev498-1.23.0</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.13</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>3.6.0-beta1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

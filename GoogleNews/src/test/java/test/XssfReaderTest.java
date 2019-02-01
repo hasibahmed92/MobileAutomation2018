@@ -20,5 +20,9 @@ public class XssfReaderTest extends XssfReader {
         List expected = xssfReader.expectedWebElement();
         Assert.assertEquals(actual,expected);
     }
+    @Test
+    public void webElementName1(){// data driven test, using data from excel sheets
+       xssfReader.webElementList();
+    }
 
 }

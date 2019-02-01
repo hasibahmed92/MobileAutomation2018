@@ -5,8 +5,8 @@
     <parameter name="OS" value="Android"/>
     <parameter name="appType" value="Phone"/>
     <parameter name="deviceType" value="Emulator"/>
-    <parameter name="deviceName" value="Nexus 5"/>
-    <parameter name="version" value="9"/>
+    <parameter name="deviceName" value="Pixel XL API 27"/>
+    <parameter name="version" value="8.1"/>
     <parameter name="appName" value="ebay.apk"/>
     <test name="Go to Home page" preserve-order="true">
         <classes>
